@@ -21,9 +21,14 @@ expenseForm.addEventListener('submit', function (e) {
     categoryInput.value = 'food';
     console.log(`Description: ${description}, Amount: ${amount}, Category: ${category}`);
 });
+let total = 0;
 function addExpenseToList(description, amount, category) {
     const expenseList = document.getElementById('expense-list');
     const li = document.createElement('li');
     li.textContent = `${description} - $${amount} (${category})`;
     expenseList.appendChild(li);
+
+    // Update total
+    total += parseFloat(amount);
+    document.getElementById('total').textContent = total.toFixed(2);
 }
