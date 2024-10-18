@@ -5,13 +5,25 @@
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9ecef; /* Softer light background */
+    background: url('Images/Background.png') no-repeat center center fixed; /* Add the background image */
+    background-size: cover; /* Make the image cover the whole page */
     color: #333;
     line-height: 1.6;
     padding: 40px;
+}
+
+/* Dark overlay on top of the background for better readability */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay with some transparency */
+    z-index: -1; /* Ensure the overlay is behind all content */
 }
 
 /* Container styling */
