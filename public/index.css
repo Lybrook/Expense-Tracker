@@ -8,152 +8,142 @@
 /* Body styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5; /* Softer background */
-    color: #333; /* Dark text for better readability */
-    line-height: 1.6; /* Improved line height for text */
-    padding: 20px; /* Padding around the body */
-    min-height: 100vh; /* Ensure full height */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    background-color: #e9ecef; /* Softer light background */
+    color: #333;
+    line-height: 1.6;
+    padding: 40px;
 }
 
-/* Main container */
+/* Container styling */
 .container {
+    max-width: 600px; /* Restrict width */
     width: 100%;
-    max-width: 600px; /* Limit maximum width */
+    margin: 0 auto; /* Center the container */
     background-color: #fff; /* White background */
-    padding: 30px; /* Padding inside */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Smooth shadow */
-    transition: all 0.3s ease; /* Smooth transition on hover */
+    padding: 20px;
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow */
 }
 
-.container:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+/* Header styling */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #343a40; /* Darker header */
 }
 
 /* Form styling */
 form {
-    margin-bottom: 20px; /* Margin below the form */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Form elements styling */
-form div {
-    margin-bottom: 15px; /* Space between form elements */
-}
-
+/* Input and Select fields styling */
 input[type="text"],
 input[type="number"],
 select {
-    width: 100%; /* Full width */
-    padding: 12px; /* Padding inside inputs */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 6px; /* More rounded corners */
-    font-size: 16px; /* Larger font for readability */
-    transition: border-color 0.3s ease; /* Smooth border transition */
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 16px;
+    width: 100%;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
-select:focus {
-    border-color: #28a745; /* Green border on focus */
-    outline: none; /* Remove default outline */
-}
-
+/* Button styling */
 button {
-    background-color: #28a745; /* Green button */
-    color: white; /* White text */
-    border: none; /* No border */
-    padding: 12px 20px; /* More padding */
-    border-radius: 6px; /* Slightly rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: translateY(-2px); /* Slight upward movement */
+    background-color: #218838;
 }
 
-button:active {
-    background-color: #1e7e34; /* Even darker on click */
-    transform: translateY(0); /* Return to original position */
-}
-
-/* Expense list styling */
+/* Expense List styling */
 #expense-list {
-    list-style-type: none; /* Remove default list styling */
-    padding: 0; /* No padding */
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
 }
 
 #expense-list li {
-    background: #fff; /* White background for list items */
-    padding: 15px; /* Padding inside list items */
-    margin-bottom: 10px; /* Space between list items */
-    border-radius: 6px; /* Rounded corners */
-    display: flex; /* Flexbox for alignment */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center items vertically */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
 }
 
-#expense-list li:hover {
-    transform: translateY(-2px); /* Slight hover effect */
-}
-
-/* Delete button styling */
-#expense-list button {
-    background-color: #dc3545; /* Red button for delete */
-    padding: 8px 12px; /* Padding inside delete button */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 14px; /* Smaller font size */
-    margin-left: 10px; /* Space between delete button and text */
+#expense-list li button {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-#expense-list button:hover {
-    background-color: #c82333; /* Darker red on hover */
+#expense-list li button:hover {
+    background-color: #c82333;
 }
 
 /* Total amount styling */
-h2 {
-    font-size: 24px; /* Increase font size */
-    color: #333; /* Dark text for the total */
-    text-align: center; /* Center align */
-    margin-top: 20px; /* Space above total amount */
-    margin-bottom: 10px; /* Space below heading */
+.total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.total-container h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 #total {
-    font-weight: bold; /* Bold for total amount */
-    color: #28a745; /* Green color for the total */
-    font-size: 28px; /* Larger font for total amount */
-    display: block;
-    text-align: center; /* Center align the total */
+    font-size: 1.5rem;
+    color: #28a745;
+    font-weight: bold;
 }
 
-/* Reset button */
-#reset-expenses {
-    background-color: #ffc107; /* Yellow for reset button */
-    border: none; /* Remove border */
-    padding: 10px 15px; /* Padding inside */
-    border-radius: 6px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
-    font-size: 16px; /* Font size */
+/* Reset button styling */
+#reset-btn {
+    background-color: #ffc107;
+    color: #212529;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
-    display: block;
-    width: 100%; /* Full width */
-    margin-top: 20px; /* Space above reset button */
-    text-align: center;
 }
 
-#reset-expenses:hover {
-    background-color: #e0a800; /* Darker yellow on hover */
+#reset-btn:hover {
+    background-color: #e0a800;
 }
 
-#reset-expenses:active {
-    background-color: #d39e00; /* Darkest yellow on click */
+/* Responsive styling */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    button {
+        font-size: 14px;
+    }
 }
