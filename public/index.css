@@ -49,4 +49,35 @@ button {
 button:hover {
     background-color: #218838; /* Darker green on hover */
 }
+#expense-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* No padding */
+}
 
+#expense-list li {
+    background: #fff; /* White background for list items */
+    padding: 10px; /* Padding inside list items */
+    margin-bottom: 10px; /* Space between list items */
+    border-radius: 5px; /* Rounded corners */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+#expense-list button {
+    background-color: #dc3545; /* Red button for delete */
+    margin-left: 10px; /* Space between buttons */
+}
+
+#expense-list button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Total amount styling */
+h2 {
+    margin-top: 20px; /* Space above total amount */
+}
+
+#total {
+    font-weight: bold
+}
