@@ -29,37 +29,65 @@ expenseForm.addEventListener('submit', function (e) {
     console.log(`Description: ${description}, Amount: ${amount}, Category: ${category}`);
 });
 
-function deleteExpense(id) {
+// Function to delete an expense
+function deleteExpense(id, amount) {
+    // Check if the expense exists in the API by attempting to delete it
     fetch(`http://localhost:3000/expenses/${id}`, {
         method: 'DELETE'
     })
-    .then(() => {
-        // Remove expense from list in the DOM
-        document.getElementById(`expense-${id}`).remove();
-        total -= amount; // Update total
-        document.getElementById('total').textContent = total.toFixed(2);
+    .then(response => {
+        if (response.ok) {
+            // Remove the expense from the list in the DOM
+            document.getElementById(`expense-${id}`).remove();
+            
+            // Update total
+            total -= amount; // Subtract amount from total
+            document.getElementById('total').textContent = total.toFixed(2);
+        } else {
+            // If it was not an API expense, just remove it from the DOM
+            document.getElementById(`expense-${id}`).remove();
+            total -= amount;
+            document.getElementById('total').textContent = total.toFixed(2);
+        }
     })
-    .catch(error => console.error('Error deleting expense:', error));
+    .catch(error => {
+        console.error('Error deleting expense:', error);
+        alert('Failed to delete expense. Please try again later.');
+    });
 }
+
 // Function to add an expense to the list
-function addExpenseToList(description, amount, category) {
+let expenseId = 0; // Initialize an expense ID counter
+
+// Function to add an expense to the list
+function addExpenseToList(description, amount, category, id = null) {
+    if (!id) {
+        // If no ID is provided (for new expenses), increment the expenseId
+        expenseId++;
+        id = expenseId; // Use the incremented ID for new expenses
+    }
+
     const expenseList = document.getElementById('expense-list');
     const li = document.createElement('li');
+    li.id = `expense-${id}`; // Assign a unique ID to each expense
+
     li.textContent = `${description} - $${amount.toFixed(2)} (${category})`; // Format amount to two decimal places
 
-     // Add delete button to each expense item
-     const deleteBtn = document.createElement('button');
-     deleteBtn.textContent = 'Delete';
-     deleteBtn.onclick = function () {
-         deleteExpense(id);
-     };
-     li.appendChild(deleteBtn);
+    // Add delete button to each expense item
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.onclick = function () {
+        deleteExpense(id, amount); // Pass the expenseId and amount to delete function
+    };
+    li.appendChild(deleteBtn);
     expenseList.appendChild(li);
 
     // Update total
     total += amount; // Add amount to total
     document.getElementById('total').textContent = total.toFixed(2); // Display total
 }
+
+
 
 // Reset button functionality
 resetBtn.addEventListener('click', function () {
@@ -71,6 +99,7 @@ resetBtn.addEventListener('click', function () {
 });
 
 // Function to load expenses from the server
+// Function to load expenses from the server
 function loadExpenses() {
     fetch('http://localhost:3000/expenses')
         .then(response => {
@@ -81,7 +110,8 @@ function loadExpenses() {
         })
         .then(data => {
             data.forEach(expense => {
-                addExpenseToList(expense.description, parseFloat(expense.amount), expense.category); // Ensure amount is a float
+                // Add each expense from the API to the list with its existing ID
+                addExpenseToList(expense.description, parseFloat(expense.amount), expense.category, expense.id);
                 total += parseFloat(expense.amount); // Update total
             });
             document.getElementById('total').textContent = total.toFixed(2); // Display updated total

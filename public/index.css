@@ -7,18 +7,34 @@
 
 /* Body styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Light background */
-    color: #333; /* Dark text */
-    line-height: 1.6; /* Better readability */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Softer background */
+    color: #333; /* Dark text for better readability */
+    line-height: 1.6; /* Improved line height for text */
     padding: 20px; /* Padding around the body */
+    min-height: 100vh; /* Ensure full height */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
+
+/* Main container */
+.container {
+    width: 100%;
+    max-width: 600px; /* Limit maximum width */
+    background-color: #fff; /* White background */
+    padding: 30px; /* Padding inside */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Smooth shadow */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+}
+
 /* Form styling */
 form {
-    background: #fff; /* White background for the form */
-    padding: 20px; /* Padding inside the form */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     margin-bottom: 20px; /* Margin below the form */
 }
 
@@ -31,24 +47,42 @@ input[type="text"],
 input[type="number"],
 select {
     width: 100%; /* Full width */
-    padding: 10px; /* Padding inside inputs */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 4px; /* Rounded corners */
+    padding: 12px; /* Padding inside inputs */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 6px; /* More rounded corners */
+    font-size: 16px; /* Larger font for readability */
+    transition: border-color 0.3s ease; /* Smooth border transition */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #28a745; /* Green border on focus */
+    outline: none; /* Remove default outline */
 }
 
 button {
     background-color: #28a745; /* Green button */
     color: white; /* White text */
     border: none; /* No border */
-    padding: 10px 15px; /* Padding */
-    border-radius: 5px; /* Rounded corners */
+    padding: 12px 20px; /* More padding */
+    border-radius: 6px; /* Slightly rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
     font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
 button:hover {
     background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight upward movement */
 }
+
+button:active {
+    background-color: #1e7e34; /* Even darker on click */
+    transform: translateY(0); /* Return to original position */
+}
+
+/* Expense list styling */
 #expense-list {
     list-style-type: none; /* Remove default list styling */
     padding: 0; /* No padding */
@@ -56,17 +90,28 @@ button:hover {
 
 #expense-list li {
     background: #fff; /* White background for list items */
-    padding: 10px; /* Padding inside list items */
+    padding: 15px; /* Padding inside list items */
     margin-bottom: 10px; /* Space between list items */
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 6px; /* Rounded corners */
     display: flex; /* Flexbox for alignment */
     justify-content: space-between; /* Space between items */
     align-items: center; /* Center items vertically */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s ease;
 }
 
+#expense-list li:hover {
+    transform: translateY(-2px); /* Slight hover effect */
+}
+
+/* Delete button styling */
 #expense-list button {
     background-color: #dc3545; /* Red button for delete */
-    margin-left: 10px; /* Space between buttons */
+    padding: 8px 12px; /* Padding inside delete button */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Smaller font size */
+    margin-left: 10px; /* Space between delete button and text */
+    transition: background-color 0.3s ease;
 }
 
 #expense-list button:hover {
@@ -75,9 +120,40 @@ button:hover {
 
 /* Total amount styling */
 h2 {
+    font-size: 24px; /* Increase font size */
+    color: #333; /* Dark text for the total */
+    text-align: center; /* Center align */
     margin-top: 20px; /* Space above total amount */
+    margin-bottom: 10px; /* Space below heading */
 }
 
 #total {
-    font-weight: bold
+    font-weight: bold; /* Bold for total amount */
+    color: #28a745; /* Green color for the total */
+    font-size: 28px; /* Larger font for total amount */
+    display: block;
+    text-align: center; /* Center align the total */
+}
+
+/* Reset button */
+#reset-expenses {
+    background-color: #ffc107; /* Yellow for reset button */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Padding inside */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%; /* Full width */
+    margin-top: 20px; /* Space above reset button */
+    text-align: center;
+}
+
+#reset-expenses:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
+
+#reset-expenses:active {
+    background-color: #d39e00; /* Darkest yellow on click */
 }
