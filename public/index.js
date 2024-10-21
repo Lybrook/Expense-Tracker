@@ -101,7 +101,9 @@ function addExpenseToList(description, amount, category, id = null) {
         deleteExpense(id, amount); 
     };
     li.appendChild(deleteBtn);
-    expenseList.appendChild(li);
+    requestAnimationFrame(() => {
+        expenseList.appendChild(li);
+    });;
 
    
     total += amount; 
