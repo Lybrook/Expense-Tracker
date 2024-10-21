@@ -24,7 +24,7 @@ expenseForm.addEventListener('submit', function (e) {
         amount: amount.toFixed(2), 
         category: category
     };
-
+//postman
     fetch('http://localhost:3000/expenses', {
         method: 'POST',
         headers: {
