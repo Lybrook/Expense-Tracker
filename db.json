@@ -23,6 +23,12 @@
       "description": "Picnic",
       "amount": "50.00",
       "category": "entertainment"
+    },
+    {
+      "id": "c745",
+      "description": "Toothpaste",
+      "amount": "2.00",
+      "category": "utilities"
     }
   ]
 }
