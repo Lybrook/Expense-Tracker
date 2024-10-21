@@ -1,4 +1,4 @@
-/* Basic reset styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +7,13 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('Images/Background.png') no-repeat center center fixed; /* Add the background image */
-    background-size: cover; /* Make the image cover the whole page */
-    color: #333;
+    background: url('Images/Background.png') no-repeat center center fixed; 
+    background-size: cover; 
     line-height: 1.6;
     padding: 40px;
 }
 
-/* Dark overlay on top of the background for better readability */
+
 body::before {
     content: "";
     position: absolute;
@@ -22,38 +21,33 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay with some transparency */
-    z-index: -1; /* Ensure the overlay is behind all content */
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
 }
 
-/* Container styling */
-.container {
-    max-width: 600px; /* Restrict width */
+ .container {
+    max-width: 600px; 
     width: 100%;
-    margin: 0 auto; /* Center the container */
-    background-color: #fff; /* White background */
+    margin: 0 auto; 
+    background-color: #fff; 
     padding: 20px;
-    border-radius: 10px; /* Smooth corners */
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow */
+    border-radius: 10px; 
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
-/* Header styling */
 h1 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #343a40; /* Darker header */
+    color: #000000; 
 }
-
-/* Form styling */
-form {
+ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Input and Select fields styling */
-input[type="text"],
+ input[type="text"],
 input[type="number"],
 select {
     padding: 12px;
@@ -63,8 +57,7 @@ select {
     width: 100%;
 }
 
-/* Button styling */
-button {
+ button {
     background-color: #28a745;
     color: #fff;
     padding: 12px;
@@ -79,8 +72,7 @@ button:hover {
     background-color: #218838;
 }
 
-/* Expense List styling */
-#expense-list {
+ #expense-list {
     list-style: none;
     padding: 0;
     margin-top: 20px;
@@ -98,8 +90,8 @@ button:hover {
 }
 
 #expense-list li button {
-    background-color: #dc3545;
-    color: #fff;
+    background-color: white;
+    color: #cf170a;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
@@ -111,8 +103,7 @@ button:hover {
     background-color: #c82333;
 }
 
-/* Total amount styling */
-.total-container {
+ .total-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -127,12 +118,11 @@ button:hover {
 
 #total {
     font-size: 1.5rem;
-    color: #28a745;
+    color: #B2E7F4;
     font-weight: bold;
 }
 
-/* Reset button styling */
-#reset-btn {
+ #reset-btn {
     background-color: #ffc107;
     color: #212529;
     border: none;
@@ -147,8 +137,7 @@ button:hover {
     background-color: #e0a800;
 }
 
-/* Responsive styling */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .container {
         padding: 10px;
     }
@@ -159,3 +148,13 @@ button:hover {
         font-size: 14px;
     }
 }
+footer {
+    text-align: center; 
+    background-color: black; 
+    padding: 10px; 
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: maroon;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);  }

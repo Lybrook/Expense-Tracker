@@ -1,17 +1,28 @@
 {
-    "expenses": [
-      {
-        "id": 1,
-        "description": "Groceries",
-        "amount": "100",
-        "category": "food"
-      },
-      {
-        "id": 2,
-        "description": "Bus Ticket",
-        "amount": "20",
-        "category": "transport"
-      }
-    ]
-  }
-  
+  "expenses": [
+    {
+      "id": "1",
+      "description": "Bus Ticket",
+      "amount": "10",
+      "category": "transport"
+    },
+    {
+      "id": "ef9c",
+      "description": "Chapati",
+      "amount": "100.00",
+      "category": "food"
+    },
+    {
+      "id": "c43d",
+      "description": "kuku",
+      "amount": "30.00",
+      "category": "food"
+    },
+    {
+      "id": "c09e",
+      "description": "Picnic",
+      "amount": "50.00",
+      "category": "entertainment"
+    }
+  ]
+}
